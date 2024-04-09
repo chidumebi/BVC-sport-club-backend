@@ -40,5 +40,14 @@ class UserForm {
         this.status = status;
     }
 }
+/*const UserForm = 
+{
+    userID, 
+    userName,
+    userAddress, 
+    status,
+}*/
+
+
 
 module.exports = UserForm;

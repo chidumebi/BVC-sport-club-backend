@@ -6,7 +6,10 @@ const formRouter = express.Router();
 const userDetails = require("../controller/formController");
 
 //connecting to form Model endpoint
-formRouter.post('/formDataEntry', userDetails);
+//formRouter.post('/formDataEntry', userDetails);
+formRouter.post('/formDataEntry', userDetails)
+
+
 
 //exporting the form Router
 module.exports = formRouter;
