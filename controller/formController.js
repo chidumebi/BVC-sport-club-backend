@@ -13,7 +13,7 @@ const userDetails = (req, res) => {
     //res.status(200).json(formDataEntry);
     console.log('Received data:', { userID, userName, userAddress, status });
     
-    res.redirect(`http://127.0.0.1:5500/confirmationPage/confirmIndex.html?IDNumber=${userID}&Name=${userName}&Address=${userAddress}&status=${status}`);
+    res.redirect(`http://127.0.0.1:5500/confirmationPage/confirmIndex.html`)//?IDNumber=${userID}&Name=${userName}&Address=${userAddress}&status=${status}`);
 
 
    
