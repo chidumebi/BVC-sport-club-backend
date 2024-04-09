@@ -33,7 +33,7 @@ let userForm = {
 module.exports = userForm; */
 
 class UserForm {
-    constructor(userID, userName, userAddress, status) {
+    constructor(userID, userName, userAddress, status){
         this.userID = userID;
         this.userName = userName;
         this.userAddress = userAddress;
