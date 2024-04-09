@@ -13,18 +13,22 @@ const userDetails = (req, res) => {
         userAddress: userAddress,
         status: status
     });
+
+    console.log('Received data:', { userID, userName, userAddress, status });
     
     // saving the file to my MongoDB database
     formmodel.save()
         .then(() => {
             //sending data to my html confirmation page within my computer
             res.redirect(`http://127.0.0.1:5500/confirmationPage/confirmIndex.html//?IDNumber=${userID}&Name=${userName}&Address=${userAddress}&status=${status}`);
+            res.json({ message: 'Data received successfully' });
         })
         //catching any errors
         .catch((err) => {
            
             console.log(err);
         });
+
 }
 
 //exporting the userDetails

@@ -24,7 +24,9 @@ app.use(exp.urlencoded({ extended: true }));
 app.use(formRoute); 
 myMongo();
 
+PORT = 8080;
+
 //setting up port Number
-app.listen(3000, () => {
-    console.log("server has been initialized")
+app.listen(PORT, () => {
+    console.log("server has been initialized on port " + PORT)
 });

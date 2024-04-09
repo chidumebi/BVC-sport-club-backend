@@ -7,7 +7,7 @@ const userDetails = require("../controller/formController");
 
 
 //connecting to form Model endpoint
-formRouter.post("/formModel", userDetails);
+formRouter.post('/formmodel', userDetails);
 
 
 
