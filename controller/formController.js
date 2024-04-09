@@ -1,34 +1,38 @@
 //importing formModel file
-const formModel = require("../model/formModel");
+const modelForm = require("../model/formModel");
 
 //defining the user details
 const userDetails = (req, res) => {
     // Extract data from request body
     const {userID, userName, userAddress, status } = req.body;
+    const formDataEntry = new modelForm(userID, userName, userAddress, status);
+    res.status(200).json({ message: 'Data received successfully' });
+    console.log('Received data:', { userID, userName, userAddress, status });
+
     
-    //creating a formModel instance
-    const formmodel = new formModel({
+ 
+    /*const modelform = new modelForm({
         userID: userID,
         userName: userName,
         userAddress: userAddress,
         status: status
     });
 
-    console.log('Received data:', { userID, userName, userAddress, status });
+    console.log('Received data:', { userID, userName, userAddress, status });*/
     
-    // saving the file to my MongoDB database
-    formmodel.save()
+    
+    formDataEntry.save()
         .then(() => {
             //sending data to my html confirmation page within my computer
             res.redirect(`http://127.0.0.1:5500/confirmationPage/confirmIndex.html//?IDNumber=${userID}&Name=${userName}&Address=${userAddress}&status=${status}`);
-            res.json({ message: 'Data received successfully' });
+           
         })
         //catching any errors
         .catch((err) => {
-           
-            console.log(err);
+            console.error("Error saving data:", err);
+            // Handle error appropriately
+            res.status(500).json({ error: 'Failed to save data' });
         });
-
 }
 
 //exporting the userDetails

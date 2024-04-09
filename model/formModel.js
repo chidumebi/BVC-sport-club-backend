@@ -1,11 +1,17 @@
 //importing mongoose
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 
 //using mongoose schema class
-const Schema = mongoose.Schema;
+//const Schema = mongoose.Schema;
 
 //creating a schema instance
-const formSchema = new Schema({
+//creating a mongoose model to store the model
+//const userRegister = ("userRegister", formSchema);
+
+//exporting the mongoose model
+
+/*
+let userForm = {
     userID: {
         type: String,
         required: true
@@ -22,12 +28,17 @@ const formSchema = new Schema({
         type: String,
         required: true
     }
-}, {
-    timestamps: true
-});
+};
 
-//creating a mongoose model to store the model
-const userRegister = mongoose.model("userRegister", formSchema);
+module.exports = userForm; */
 
-//exporting the mongoose model
-module.exports = userRegister;
+class UserForm {
+    constructor(userID, userName, userAddress, status) {
+        this.userID = userID;
+        this.userName = userName;
+        this.userAddress = userAddress;
+        this.status = status;
+    }
+}
+
+module.exports = UserForm;

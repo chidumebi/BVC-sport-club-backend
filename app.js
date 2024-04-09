@@ -5,7 +5,7 @@ const exp = require("express");
 const app = exp();
 
 //connecting to my mondodb database
-const myMongo = require("./mongodb");
+//const myMongo = require("./mongodb");
 
 //setting up a route
 const formRoute = require("./route/formRoute");
@@ -21,10 +21,10 @@ app.use((req, res, next) => {
 app.use(exp.json());
 app.use(exp.static("Users"));
 app.use(exp.urlencoded({ extended: true }));
-app.use(formRoute); 
-myMongo();
+app.use('/', formRoute); 
+//myMongo();
 
-PORT = 8080;
+PORT = 3000;
 
 //setting up port Number
 app.listen(PORT, () => {

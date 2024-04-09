@@ -1,4 +1,4 @@
-//importing mongoose
+/*//importing mongoose
 const mongoose = require("mongoose");
 
 //my mongodb connection url
@@ -15,4 +15,4 @@ async function connectToMyMongo() {
 
 //exporting the function
 module.exports = connectToMyMongo;
-
+*/
