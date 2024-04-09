@@ -24,9 +24,9 @@ app.use(exp.urlencoded({ extended: true }));
 app.use('/', formRoute); 
 //myMongo();
 
-PORT = 3000;
+PORT = process.env.port || 3000;
 
 //setting up port Number
 app.listen(PORT, () => {
-    console.log("server has been initialized on port " + PORT)
+    console.log("server has been initialized on port " + PORT);
 });
