@@ -9,7 +9,7 @@ const userDetails = (req, res) => {
     //const formDataEntry = new modelForm(userID, userName, userAddress, status);
     const formDataEntry=[];
     formDataEntry.push(new modelForm(userID, userName, userAddress, status));
-    //res.status(200).json({ message: 'Data received successfully' });
+     res.status(200).json({ message: 'Data received successfully' });
     //res.status(200).json(formDataEntry);
     console.log('Received data:', { userID, userName, userAddress, status });
     
