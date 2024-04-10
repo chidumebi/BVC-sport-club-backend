@@ -9,8 +9,9 @@ const userDetails = (req, res) => {
     //const formDataEntry = new modelForm(userID, userName, userAddress, status);
     const formDataEntry=[];
     formDataEntry.push(new modelForm(userID, userName, userAddress, status));
-     res.status(200).json({ message: 'Data received successfully' });
-    //res.status(200).json(formDataEntry);
+     //res.status(200).json({ message: 'Data received successfully' });
+     res.status(200).json( { userID, userName, userAddress, status });
+   
     console.log('Received data:', { userID, userName, userAddress, status });
     
     //res.redirect(`http://127.0.0.1:5500/confirmationPage/confirmIndex.html?IDNumber=${userID}&Name=${userName}&Address=${userAddress}&status=${status}`);
